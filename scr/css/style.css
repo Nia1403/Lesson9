@@ -1,0 +1,120 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+ul{
+	list-style: none;
+}
+
+img{
+	max-width: 100%;
+}
+
+.continer{
+	max-width: 1920px;
+	width: 100%;
+	margin:0 auto;
+}
+
+.box{
+
+/*  mit flex width oder grid und height hard besser nicht schreiben */
+    width: 100%;
+    min-height: 200px;
+    background-color: rgb(50, 131, 137);
+    border: 2px solid black;
+
+    /* display flex + align items center + justify content center -> sorgen dafür, dass die child items, oder innere Text in der Mitte platziert werden */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.main{
+    /* einfach grid, ohne weitere Konfiguration ist nur eine Splate mit nummerierten boxen, diese Nummerierung kann dann später 
+       für die Zuordnung dieser boxen (Elemente) verwendet werden (wichtig) */
+    display: grid;
+
+    /* muss mit dem Grind angegeben werden, dies bestimmt, wie viele Spalten es geben soll (z.B. 9 Items haben 3 Spalten/columns),  */
+
+    /* hart geschriebene px ist nicht empfehlenswert, kann horizontales Scrollen verursachen, hier wären es 4 Spalten (4x px gegeben)
+    grid-template-columns: 200px 200px 200px 200px; oder % ist auch möglich aber auto ist besser */
+
+    /* fr fraction -> definiert die Multiplizität, wievielmal größer sein muss mit der vorhierigen spalte 
+    grid-template-columns: 1fr 2fr 3fr; */
+
+    /* bedeutet 4 columns Spaltel, jeweils 1fr*/
+    grid-template-columns: repeat(4, 1fr);
+
+    /* row -> definiert Reihen 
+    grid-template-rows: 200px 200px 200px 200px; */
+    /* wenn es mehr als fest definierte Reihen gibt, erhalten die neue Reihen die in Auto-Rows definierte Größe 
+    grid-auto-rows: 100px; */
+
+    /* nimmt mindestens 200px und maximal so viel wie nötig */
+    grid-auto-rows: minmax(200px, auto);
+
+    /* gap -> items voneinander zu trennen. works nur mit flex und grid */
+    gap: 10px;
+
+    /* hier wie bei Tetris, einfach Komponenten horizontal oder vertikal nebeneinander platzieren 
+    (mit dem gleichen Namen) und dann diese Namen den einzelnen Elementen zuweisen. 
+    wichti!! ->  grid-template-areas: muss das hauptelement haben und dann die einzelne itemn grid-area */
+    grid-template-areas: 
+    "aaa bbb ccc ccc"
+    "aaa ddd eee fff"
+    "ggg hhh eee iii"
+    "jjj hhh kkk kkk";
+}
+
+.item-1{
+    grid-area: aaa;
+}
+.item-2{
+    grid-area: bbb;
+}
+.item-3{
+    grid-area: ccc;
+}
+
+.item-4{
+    grid-area: ddd;
+}
+
+.item-5{
+    grid-area: eee;
+}
+
+.item-6{
+    grid-area: fff;
+}
+
+.item-7{
+    grid-area: ggg;
+}
+
+.item-8{
+    grid-area: hhh;
+}
+
+.item-9{
+    grid-area: iii;
+}
+
+.item-10{
+    grid-area: jjj;
+}
+
+.item-11{
+    grid-area: kkk;
+}
+
