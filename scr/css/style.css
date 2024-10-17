@@ -51,7 +51,7 @@ header div img{
 .box{
 /*  mit flex width oder grid und height hard besser nicht schreiben */
     width: 100%;
-    min-height: 200px;
+    min-height: 100px;
     background-color: rgb(239, 246, 246);
     border: 2px solid black;
 
@@ -90,8 +90,8 @@ header div img{
     /* gap -> items voneinander zu trennen. works nur mit flex und grid */
     gap: 10px;
 
-    /* hier wie bei Tetris, einfach Komponenten horizontal oder vertikal nebeneinander platzieren 
-    (mit dem gleichen Namen) und dann diese Namen den einzelnen Elementen zuweisen. 
+    /* hier wie bei Tetris, zuerst einfach Komponenten horizontal oder vertikal nebeneinander platzieren 
+    (mit dem gleichen Namen) und dann diese Namen den einzelnen Elementen zuweisen. Es muss genausoviel Spalten und Reihen geben wie bereits im Grid-template definiert
     wichti!! ->  grid-template-areas: muss das hauptelement haben und dann die einzelne itemn grid-area */
     grid-template-areas: 
     "aaa bbb ccc ccc"
@@ -141,4 +141,5 @@ header div img{
 .item-11{
     grid-area: kkk;
 }
+
 
